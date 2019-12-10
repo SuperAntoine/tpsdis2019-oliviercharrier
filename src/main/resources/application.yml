@@ -1,0 +1,10 @@
+logging:
+  level:
+    org: ERROR
+
+spring:
+  rabbitmq:
+    host: swan.rmq.cloudamqp.com
+    password: ImStIfzlSEiGk72iJIg1sRphhg6IoMrZ
+    username: rbrilnwu
+    virtual-host: rbrilnwu
