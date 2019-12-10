@@ -1,4 +1,4 @@
-package net.jambon.rillettes.tpsdisoliviercharrier;
+package net.jambon.rillettes.tpsdisoliviercharrier.worker;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,4 +1,4 @@
-package net.jambon.rillettes.tpsdisoliviercharrier;
+package net.jambon.rillettes.tpsdisoliviercharrier.rest;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
@@ -9,11 +9,6 @@ public class MessageConfig {
 
     @Bean
     public Queue message() {
-        return new Queue("message");
-    }
-
-    @Bean
-    public MessageService service() {
-        return new MessageService();
+        return new Queue("message-olivier-charrier");
     }
 }
