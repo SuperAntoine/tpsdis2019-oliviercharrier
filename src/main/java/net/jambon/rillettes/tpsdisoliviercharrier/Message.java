@@ -3,10 +3,11 @@ package net.jambon.rillettes.tpsdisoliviercharrier;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Message {
+public class Message implements Serializable {
     private @Id @GeneratedValue int id;
     private Date timestamp;
     private String content;
