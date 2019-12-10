@@ -8,3 +8,5 @@ spring:
     password: ImStIfzlSEiGk72iJIg1sRphhg6IoMrZ
     username: rbrilnwu
     virtual-host: rbrilnwu
+  profile:
+    active: clientNotif

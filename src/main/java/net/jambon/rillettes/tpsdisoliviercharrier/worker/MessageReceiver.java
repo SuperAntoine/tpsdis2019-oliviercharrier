@@ -1,6 +1,6 @@
 package net.jambon.rillettes.tpsdisoliviercharrier.worker;
 
-import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -18,7 +18,7 @@ public class MessageReceiver {
     private MessageRepository messageRepository;
 
     @Autowired
-    private Queue queue;
+    private FanoutExchange fanout;
 
     @Autowired
     private RabbitTemplate template;
@@ -39,7 +39,7 @@ public class MessageReceiver {
         Message message = new Message();
         message.fromString(msg);
         this.saveOrUpdate(message);
-        System.out.println("Message envoyé sur la queue : " + queue.getName() + " avec comme message : " + msg);
-        this.template.convertAndSend(queue.getName(), msg);
+        System.out.println("Message envoyé sur la queue : " + fanout.getName() + " avec comme message : " + msg);
+        this.template.convertAndSend(fanout.getName(), msg);
     }
 }
