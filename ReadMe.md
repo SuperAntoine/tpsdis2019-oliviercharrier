@@ -1,5 +1,4 @@
-Pour lancer le projet :
-
-faire ./mvnw package
-
-faire ./mvnw spring-boot:run
+Lancer la base de données
+```
+java -jar h2-1.4.200.jar
+```s

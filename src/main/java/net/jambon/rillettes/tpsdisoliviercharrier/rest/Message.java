@@ -9,11 +9,11 @@ import java.util.Date;
 @Entity
 public class Message implements Serializable {
     private @Id @GeneratedValue int id;
-    private Date timestamp;
+    private String timestamp;
     private String content;
 
     public Message(String content) {
-        this.timestamp = new Date();
+        this.timestamp = new Date().toString();
         this.content = content;
     }
 
@@ -23,7 +23,7 @@ public class Message implements Serializable {
         return id;
     }
 
-    public Date getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
@@ -31,7 +31,7 @@ public class Message implements Serializable {
         return content;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
