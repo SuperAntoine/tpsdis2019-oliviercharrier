@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: net.jambon.rillettes.tpsdisoliviercharrier.worker.Test
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 135.652 s - in net.jambon.rillettes.tpsdisoliviercharrier.worker.Test

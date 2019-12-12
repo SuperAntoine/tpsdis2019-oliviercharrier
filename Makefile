@@ -1,0 +1,10 @@
+all:
+	rest
+clientNotif:
+	./launchClientNotif.sh
+clientMessage:
+	./launchClientMessage.sh
+worker:
+	./launchWorker.sh
+rest:
+	./launchREST.sh
