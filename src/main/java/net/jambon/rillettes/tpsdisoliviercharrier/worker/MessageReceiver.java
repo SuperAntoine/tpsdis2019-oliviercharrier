@@ -40,6 +40,6 @@ public class MessageReceiver {
         message.fromString(msg);
         this.saveOrUpdate(message);
         System.out.println("Message envoyé sur la queue : " + fanout.getName() + " avec comme message : " + msg);
-        this.template.convertAndSend(fanout.getName(), msg);
+        this.template.convertAndSend(fanout.getName(), "", msg);
     }
 }

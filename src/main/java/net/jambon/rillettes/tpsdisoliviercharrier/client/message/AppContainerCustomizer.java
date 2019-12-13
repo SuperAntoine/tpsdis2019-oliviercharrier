@@ -1,4 +1,4 @@
-package net.jambon.rillettes.tpsdisoliviercharrier.client;
+package net.jambon.rillettes.tpsdisoliviercharrier.client.message;
 
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
@@ -9,6 +9,6 @@ public class AppContainerCustomizer implements WebServerFactoryCustomizer<Config
 
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
-        factory.setPort(8083);
+        factory.setPort(8084);
     }
 }

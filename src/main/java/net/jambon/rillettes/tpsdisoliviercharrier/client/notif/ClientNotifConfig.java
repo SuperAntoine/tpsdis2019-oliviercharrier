@@ -1,11 +1,11 @@
-package net.jambon.rillettes.tpsdisoliviercharrier.client;
+package net.jambon.rillettes.tpsdisoliviercharrier.client.notif;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ClientConfig {
+public class ClientNotifConfig {
 
     @Bean
     public Queue pubsubNotif() {
