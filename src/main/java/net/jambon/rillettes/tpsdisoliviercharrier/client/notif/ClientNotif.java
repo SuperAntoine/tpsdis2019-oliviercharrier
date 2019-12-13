@@ -23,6 +23,8 @@ public class ClientNotif {
             System.out.println("Nouveau message");
         } else if (type.equals("DELETE")) {
             System.out.println("Suppression d'un message");
+        } else if (type.equals("UPDATE")) {
+            System.out.println("mise à jours d'un message");
         }
     }
 }

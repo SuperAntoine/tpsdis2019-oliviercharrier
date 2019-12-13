@@ -1,4 +1,4 @@
-package net.jambon.rillettes.tpsdisoliviercharrier;
+package net.jambon.rillettes.tpsdisoliviercharrier.rest;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

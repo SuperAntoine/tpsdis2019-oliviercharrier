@@ -64,4 +64,19 @@ public class MessageController {
             this.messages.removeIf(msg -> msg.getId() == id);
         }
     }
+
+    @PostMapping("/messages/update")
+    private void updateMessage(@RequestParam(value = "id") int id, String content) {
+        if (this.messages.size() == 0) {
+            this.messages = new ArrayList<>();
+            this.messageRepository.findAll().forEach(msg -> this.messages.add(msg));
+        }
+        Message message = this.getById(id);
+        if (message != null) {
+            System.out.println("Message envoyé sur la queue : " + queue.getName() + " avec comme message : " + message.toString("DELETE"));
+            this.template.convertAndSend(queue.getName(), message.toString("UPDATE"));
+            this.messages.removeIf(msg -> msg.getId() == id);
+            this.messages.add(message);
+        }
+    }
 }

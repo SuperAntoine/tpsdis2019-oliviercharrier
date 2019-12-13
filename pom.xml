@@ -64,14 +64,74 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+	<profiles>
+		<!--  Profil pour rest -->
+		<profile>
+			<id>rest</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+				<resources>
+					<resource>
+						<directory>src/main/java/net/jambon/rillettes/tpsdisoliviercharrier/rest/resources</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<!--  Profil pour clientNotif -->
+		<profile>
+			<id>clientNotif</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+				<resources>
+					<resource>
+						<directory>src/main/java/net/jambon/rillettes/tpsdisoliviercharrier/client/notif/resources</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<!--  Profil pour clientMessage -->
+		<profile>
+			<id>clientMessage</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+				<resources>
+					<resource>
+						<directory>src/main/java/net/jambon/rillettes/tpsdisoliviercharrier/client/message/resources</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<!--  Profil pour worker -->
+		<profile>
+			<id>worker</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+				<resources>
+					<resource>
+						<directory>src/main/java/net/jambon/rillettes/tpsdisoliviercharrier/worker</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
 </project>

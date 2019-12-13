@@ -42,6 +42,8 @@ public class MessageReceiver {
             this.saveOrUpdate(message);
         } else if (type.equals("DELETE")) {
             //Suppression
+        } else if (type.equals("UPDATE")) {
+            this.saveOrUpdate(message);
         }
         System.out.println("Message envoyé sur la queue : " + fanout.getName() + " avec comme message : " + msg);
         this.template.convertAndSend(fanout.getName(), "", msg);
