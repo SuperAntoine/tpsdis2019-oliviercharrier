@@ -9,11 +9,11 @@ public class ClientConfig {
 
     @Bean
     public Queue pubsubNotif() {
-        return new Queue("pubsub-notif-olivier-charrier");
+        return new Queue("fanout-pubsub-notif-olivier-charrier");
     }
 
     @Bean
-    public Queue pubsubMessage() {
-        return new Queue("pubsub-message-olivier-charrier");
+    public ClientNotif clientNotif() {
+        return new ClientNotif();
     }
 }

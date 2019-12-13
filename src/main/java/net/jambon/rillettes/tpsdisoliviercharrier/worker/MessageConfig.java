@@ -12,7 +12,7 @@ public class MessageConfig {
 
     @Bean
     public FanoutExchange fanout() {
-        return new FanoutExchange("pubsub-olivier-charrier");
+        return new FanoutExchange("fanout-pubsub-olivier-charrier");
     }
 
     @Bean
@@ -22,7 +22,7 @@ public class MessageConfig {
 
     @Bean
     public Queue pubsubNotif() {
-        return new Queue("pubsub-notif-olivier-charrier");
+        return new Queue("fanout-pubsub-notif-olivier-charrier");
     }
 
     @Bean
@@ -32,7 +32,7 @@ public class MessageConfig {
 
     @Bean
     public Queue pubsubMessage() {
-        return new Queue("pubsub-message-olivier-charrier");
+        return new Queue("fanout-pubsub-message-olivier-charrier");
     }
 
 }
