@@ -73,9 +73,10 @@ public class MessageController {
         }
         Message message = this.getById(id);
         if (message != null) {
-            System.out.println("Message envoyé sur la queue : " + queue.getName() + " avec comme message : " + message.toString("DELETE"));
+            System.out.println("Message envoyé sur la queue : " + queue.getName() + " avec comme message : " + message.toString("UPDATE"));
             this.template.convertAndSend(queue.getName(), message.toString("UPDATE"));
             this.messages.removeIf(msg -> msg.getId() == id);
+            message.setContent(content);
             this.messages.add(message);
         }
     }
