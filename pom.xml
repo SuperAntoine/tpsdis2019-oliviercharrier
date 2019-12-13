@@ -68,6 +68,9 @@
 		<!--  Profil pour rest -->
 		<profile>
 			<id>rest</id>
+			<properties>
+				<start-class>net.jambon.rillettes.tpsdisoliviercharrier.rest.RESTApplication</start-class>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -85,6 +88,9 @@
 		<!--  Profil pour clientNotif -->
 		<profile>
 			<id>clientNotif</id>
+			<properties>
+				<start-class>net.jambon.rillettes.tpsdisoliviercharrier.client.notif.ClientNotifApplication</start-class>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -102,6 +108,9 @@
 		<!--  Profil pour clientMessage -->
 		<profile>
 			<id>clientMessage</id>
+			<properties>
+				<start-class>net.jambon.rillettes.tpsdisoliviercharrier.client.message.ClientMessageApplication</start-class>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -119,6 +128,9 @@
 		<!--  Profil pour worker -->
 		<profile>
 			<id>worker</id>
+			<properties>
+				<start-class>net.jambon.rillettes.tpsdisoliviercharrier.worker.WorkerApplication</start-class>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>

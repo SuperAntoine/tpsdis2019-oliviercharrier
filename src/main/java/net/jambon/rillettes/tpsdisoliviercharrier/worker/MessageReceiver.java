@@ -23,28 +23,24 @@ public class MessageReceiver {
     @Autowired
     private RabbitTemplate template;
 
-    public List<Message> getAllMessages() {
-        List<Message> msgs = new ArrayList<Message>();
-        this.messageRepository.findAll().forEach(msg -> msgs.add(msg));
-        return msgs;
-    }
-
+    //Sauvegarde ou met à jour dans la BDD
     public void saveOrUpdate(Message msg) {
         this.messageRepository.save(msg);
     }
 
+    //Réception du message depuis l'API et envoi aux clients
     @RabbitHandler
     public void receive(String msg) {
         System.out.println("Message reçu : " + msg);
         Message message = new Message();
+        //On regarde le type de message et on fait l'action correspondante
         String type = message.fromString(msg);
-        if (type.equals("POST")) {
+        if (type.equals("POST") || type.equals("UPDATE")) {
             this.saveOrUpdate(message);
         } else if (type.equals("DELETE")) {
             //Suppression
-        } else if (type.equals("UPDATE")) {
-            this.saveOrUpdate(message);
         }
+        //Envoi aux clients
         System.out.println("Message envoyé sur la queue : " + fanout.getName() + " avec comme message : " + msg);
         this.template.convertAndSend(fanout.getName(), "", msg);
     }

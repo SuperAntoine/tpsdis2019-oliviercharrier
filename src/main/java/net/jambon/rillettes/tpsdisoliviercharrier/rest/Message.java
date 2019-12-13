@@ -8,11 +8,12 @@ import java.util.Date;
 
 @Entity
 public class Message implements Serializable {
-    private @Id @GeneratedValue int id;
+    private @Id int id;
     private String timestamp;
     private String content;
 
-    public Message(String content) {
+    public Message(String content, int id) {
+        this.id = id;
         this.timestamp = new Date().toString();
         this.content = content;
     }

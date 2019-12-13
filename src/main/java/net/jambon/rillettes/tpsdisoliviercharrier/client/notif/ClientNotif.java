@@ -15,16 +15,19 @@ public class ClientNotif {
 
     @RabbitHandler
     public void receive(String msg) {
+        //On récupère le timestamp et le type d'action
         String[] split = msg.split("\t");
         String timestamp = split[3];
         String type = split[0];
+        //On affiche le timestamp de l'action
         System.out.print(String.format("[%s] ", timestamp));
+        //On affiche la bonne notification
         if (type.equals("POST")) {
             System.out.println("Nouveau message");
         } else if (type.equals("DELETE")) {
             System.out.println("Suppression d'un message");
         } else if (type.equals("UPDATE")) {
-            System.out.println("mise à jours d'un message");
+            System.out.println("Mise à jour d'un message");
         }
     }
 }

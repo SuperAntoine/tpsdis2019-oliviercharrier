@@ -16,6 +16,7 @@ public class ClientMessage {
     @RabbitHandler
     public void receive(String msg) {
         Message message = new Message();
+        //On n'affiche le message que si c'est un nouveau message
         String type = message.fromString(msg);
         if (type.equals("POST")) {
             System.out.println(message.toString());
