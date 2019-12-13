@@ -1,6 +1,22 @@
 Lancer la base de données
 ```
-java -jar h2-1.4.200.jar
+make h2
+```
+Lancer l'API REST
+```
+make rest
+```
+Lancer un worker
+```
+make worker
+```
+Lancer le client de notifications
+```
+make clientNotif
+```
+Lancer le client d'affichage des messages
+```
+make clientMessage
 ```
 Envoyer un message
 ```
