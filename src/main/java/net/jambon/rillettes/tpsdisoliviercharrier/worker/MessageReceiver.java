@@ -24,8 +24,13 @@ public class MessageReceiver {
     private RabbitTemplate template;
 
     //Sauvegarde ou met à jour dans la BDD
-    public void saveOrUpdate(Message msg) {
+    private void saveOrUpdate(Message msg) {
         this.messageRepository.save(msg);
+    }
+
+    //Suppression
+    private void delete(Message msg) {
+        this.messageRepository.delete(msg);
     }
 
     //Réception du message depuis l'API et envoi aux clients
@@ -38,7 +43,7 @@ public class MessageReceiver {
         if (type.equals("POST") || type.equals("UPDATE")) {
             this.saveOrUpdate(message);
         } else if (type.equals("DELETE")) {
-            //Suppression
+            this.delete(message);
         }
         //Envoi aux clients
         System.out.println("Message envoyé sur la queue : " + fanout.getName() + " avec comme message : " + msg);
