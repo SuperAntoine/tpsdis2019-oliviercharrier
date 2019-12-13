@@ -16,7 +16,9 @@ public class ClientMessage {
     @RabbitHandler
     public void receive(String msg) {
         Message message = new Message();
-        message.fromString(msg);
-        System.out.println(message.toString());
+        String type = message.fromString(msg);
+        if (type.equals("POST")) {
+            System.out.println(message.toString());
+        }
     }
 }

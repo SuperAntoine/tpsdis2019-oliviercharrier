@@ -19,11 +19,12 @@ public class Message implements Serializable {
 
     public Message() {}
 
-    public void fromString(String str) {
+    public String fromString(String str) {
         String[] params = str.split("\t");
-        this.id = Integer.parseInt(params[0]);
-        this.content = params[1];
-        this.timestamp = params[2];
+        this.id = Integer.parseInt(params[1]);
+        this.content = params[2];
+        this.timestamp = params[3];
+        return params[0];
     }
 
     public int getId() {

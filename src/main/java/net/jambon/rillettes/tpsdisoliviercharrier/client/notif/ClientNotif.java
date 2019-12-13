@@ -15,7 +15,14 @@ public class ClientNotif {
 
     @RabbitHandler
     public void receive(String msg) {
-        String timestamp = msg.split("\t")[2];
-        System.out.println(String.format("[%s] Nouveau message",timestamp ));
+        String[] split = msg.split("\t");
+        String timestamp = split[3];
+        String type = split[0];
+        System.out.print(String.format("[%s] ", timestamp));
+        if (type.equals("POST")) {
+            System.out.println("Nouveau message");
+        } else if (type.equals("DELETE")) {
+            System.out.println("Suppression d'un message");
+        }
     }
 }

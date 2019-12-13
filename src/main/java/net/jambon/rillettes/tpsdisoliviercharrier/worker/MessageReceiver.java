@@ -37,8 +37,12 @@ public class MessageReceiver {
     public void receive(String msg) {
         System.out.println("Message reçu : " + msg);
         Message message = new Message();
-        message.fromString(msg);
-        this.saveOrUpdate(message);
+        String type = message.fromString(msg);
+        if (type.equals("POST")) {
+            this.saveOrUpdate(message);
+        } else if (type.equals("DELETE")) {
+            //Suppression
+        }
         System.out.println("Message envoyé sur la queue : " + fanout.getName() + " avec comme message : " + msg);
         this.template.convertAndSend(fanout.getName(), "", msg);
     }

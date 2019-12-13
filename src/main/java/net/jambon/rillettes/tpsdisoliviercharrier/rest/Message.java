@@ -39,7 +39,7 @@ public class Message implements Serializable {
         this.content = content;
     }
 
-    public String toString() {
-        return String.format("%d\t%s\t%s", this.id, this.content, this.timestamp.toString());
+    public String toString(String type) {
+        return String.format("%s\t%d\t%s\t%s", type, this.id, this.content, this.timestamp.toString());
     }
 }
